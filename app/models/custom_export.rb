@@ -1,0 +1,2 @@
+class CustomExport < ApplicationRecord
+end

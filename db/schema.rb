@@ -10,9 +10,12 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.1].define(version: 2024_02_25_114527) do
-  create_table "export_entity2s", force: :cascade do |t|
-    t.text "title"
+ActiveRecord::Schema[7.1].define(version: 2024_02_25_172552) do
+  create_table "custom_exports", force: :cascade do |t|
+    t.string "person_surname"
+    t.string "person_name"
+    t.string "person_middle_name"
+    t.string "inn"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
