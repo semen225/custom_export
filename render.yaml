@@ -10,13 +10,12 @@ services:
     runtime: ruby
     plan: free
     buildCommand: "./bin/render-build.sh"
-    # preDeployCommand: "bundle exec rails db:migrate" # preDeployCommand only available on paid instance types
     startCommand: "bundle exec rails server"
     envVars:
       - key: DATABASE_URL
         fromDatabase:
           name: custom_export
-          property: "postgres://custom_export:7eIft5gaqCDHuhpIK0xSMoDuFQyUD4AK@dpg-cnfo3pocmk4c73b0le3g-a.oregon-postgres.render.com/custom_export"
+          property: "postgres://custom_export:7eIft5gaqCDHuhpIK0xSMoDuFQyUD4AK@dpg-cnfo3pocmk4c73b0le3g-a/custom_export"
       - key: RAILS_MASTER_KEY
         sync: false
       - key: WEB_CONCURRENCY
