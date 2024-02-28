@@ -1,12 +1,12 @@
 databases:
-  - name: mysite
-    databaseName: mysite
-    user: mysite
+  - name: custom_export
+    databaseName: custom_export
+    user: custom_export
     plan: free
 
 services:
   - type: web
-    name: mysite
+    name: custom_export
     runtime: ruby
     plan: free
     buildCommand: "./bin/render-build.sh"
@@ -15,7 +15,7 @@ services:
     envVars:
       - key: DATABASE_URL
         fromDatabase:
-          name: mysite
+          name: custom_export
           property: connectionString
       - key: RAILS_MASTER_KEY
         sync: false
